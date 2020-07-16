@@ -7,16 +7,12 @@
             <h1 href='/'>Blog de Tomás</h1>
         </div>
 
-        <div>
-            <p>publised: 16.07.2020, 13:04</p>
-            <h2 href=''>Mi primer posteo</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus incidunt natus nisi tempore quasi! Eum distinctio nesciunt sed ipsam at perspiciatis, voluptas ab temporibus, delectus rerum quaerat tenetur aperiam vero?</p>
-        </div>
-
-        <div>
-            <p>publised: 16.07.2020, 13:08</p>
-            <h2 href=''>Mi segundo postes</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi ducimus incidunt ullam a! Dolore consequatur ad dicta magni magnam vitae id, sed omnis cumque, est reiciendis nobis? Explicabo, vero!</p>
-        </div>
+        {% for post in posts%}
+            <div>
+                <p>Publicado: {{ post.published_date }}</p>
+                <h2><a href=''>{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
